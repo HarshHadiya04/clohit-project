@@ -3,7 +3,7 @@ function MiddleContent() {
     return (
       <>
         <div>
-          hello
+          <h1>Middle-Content</h1>
         </div>
       </>
     )
