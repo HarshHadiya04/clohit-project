@@ -4,15 +4,16 @@ import viteLogo from '/vite.svg'
 import Navbar from './main_component/navbar'
 import MiddleContent from './main_component/MiddleContent'
 import Footer from './main_component/Footer'
+import Collection from './main_component/middleContent/Collection'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-      <div>
+      <div >
         <Navbar/>
-        <MiddleContent/>
+        <Collection/>
         <Footer/>
       </div>
     </>

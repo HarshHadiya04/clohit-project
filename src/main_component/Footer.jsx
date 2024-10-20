@@ -1,13 +1,12 @@
 function Footer() {
   
-    return (
-      <>
-        <div>
+  return (
+    <>
+      <div >
         <h1>Footer</h1>
-        </div>
-      </>
-    )
-  }
-  
-  export default Footer
-  
+      </div>
+    </>
+  )
+}
+
+export default Footer
