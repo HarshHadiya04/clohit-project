@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Female from "./collection/Female"
 import Male from "./collection/Male"
 
+
 function Collection() {
   const style = {
     color: '#eb5e28',
@@ -19,7 +20,7 @@ function Collection() {
           aria-pressed={activeGender === 'male'}
           onClick={() => setActiveGender('male')} // Set active to 'male' on click
         >
-          <Male />
+          Male
         </div>
 
         {/* Female button */}
@@ -29,9 +30,12 @@ function Collection() {
           aria-pressed={activeGender === 'female'}
           onClick={() => setActiveGender('female')} // Set active to 'female' on click
         >
-          <Female />
+          Female
         </div>
       </div>
+      <div>
+        {activeGender === 'male' ? <Male /> : <Female />}
+        </div>
     </>
   )
 }
