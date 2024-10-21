@@ -70,7 +70,7 @@ function Female() {
             Mrp: '799',
             Price: '329'
         },
-    ]
+    ];
     return (
     <>
         <div className="d-flex flex-wrap justify-content-center">

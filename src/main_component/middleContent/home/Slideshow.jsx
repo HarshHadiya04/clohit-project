@@ -38,7 +38,7 @@ function Slideshow() {
         {/* Image */}
         <img
           className="rounded"
-          style={{ height: '400px', width: '90%' }}
+          style={{ height: '450px', width: '90%' }}
           src={images[imageIndex]}
           alt="slide image"
         />

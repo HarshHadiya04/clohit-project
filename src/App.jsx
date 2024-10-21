@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import Navbar from './main_component/navbar'
 import MiddleContent from './main_component/MiddleContent'
 import Footer from './main_component/Footer'
-import Collection from './main_component/middleContent/Home'
+import Home from './main_component/middleContent/Home'
+import Collection from './main_component/middleContent/Collection'
 
 
 function App() {
