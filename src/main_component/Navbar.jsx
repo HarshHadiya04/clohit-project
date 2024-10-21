@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
 const Navbar = () => {
 
    const [color, setColor] = useState('#252422');

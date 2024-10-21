@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Female from "./collection/Female"
-import Male from "./collection/Male"
+import Female from "./home/Female"
+import Male from "./home/Male"
+import Slideshow from './home/Slideshow';
 
 
-function Collection() {
+function Home() {
   const style = {
     color: '#eb5e28',
     fontFamily: "'Lobster' , sans-serif ",
@@ -33,6 +34,7 @@ function Collection() {
           Female
         </div>
       </div>
+      <Slideshow/>
       <div>
         {activeGender === 'male' ? <Male /> : <Female />}
         </div>
@@ -40,4 +42,4 @@ function Collection() {
   )
 }
 
-export default Collection
+export default Home
