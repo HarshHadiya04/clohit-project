@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 import { useWishlist } from '../../WishlistContext'; // Adjust the path
+import { useAddbag } from '../../AddbagContext';
 
 function Collection() {
+    
     const { wishlist, setWishlist } = useWishlist(); // Destructure the wishlist context
-
+    const { Addbag, setAddbag } =  useAddbag(); 
     
     const collections = [
         {
@@ -162,29 +164,42 @@ function Collection() {
         }
     };
 
+    const bagClick = (item) => {
+        const isLiked = Addbag.some(likedItem => likedItem.Description === item.Description);
+        if (!isLiked) {
+            setAddbag([...Addbag, item]);
+        }
+    };
+
     return (
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex p-3 flex-wrap justify-content-evenly">
                 {collections.map((item) => (
-                    <div className="p-4 m-2" style={{ marginBottom: '20px', width: '350px', height: '500px' }} key={item.Description}>
-                        <img className="rounded" src={item.Image} alt={item.Description} style={{ width: '300px', height: '300px' }} />
-                        <h4 style={{ textAlign: 'center' }}>{item.Brand}</h4>
+                    <div className="m-2 p-3 border rounded-4 shadow" style={{ marginBottom: '20px', width: '300px' }} key={item.Description}>
+                        <img className="rounded m-3" src={item.Image} alt={item.Description} style={{ width: '250px' ,height:'350px', objectFit:'contain'}} />
+                        
+                        <h4 className='m-1' style={{ textAlign: 'center' }}>{item.Brand}</h4>
                         <p style={{
                             display: '-webkit-box',
                             WebkitBoxOrient: 'vertical',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
-                            WebkitLineClamp: 2, // This limits the text to 2 lines
+                            WebkitLineClamp: 1, // This limits the text to 2 lines
                             lineClamp: 2,
                             textAlignLast: 'center'
                         }}>{item.Description}</p>
                         <p>MRP: ₹{item.Mrp}</p>
                         <p>Price: ₹{item.Price}</p>
                         
+                        
+                        <div className="d-flex p-3 border-top border-dark pb-3 flex-wrap justify-content-evenly">
                         <FontAwesomeIcon
                             icon={wishlist.some(wishItem => wishItem.Description === item.Description) ? faHeartSolid : faHeartRegular} 
                             onClick={() => heartClick(item)} 
-                            style={{ cursor: 'pointer' }} 
+                            style={{ cursor: 'pointer' ,height:'1.8rem'}} 
                         />
+                        
+                        <button type="button" class="btn btn-dark rounded-3" onClick={() => bagClick(item)}>Add to Bag</button>
+                        </div>
                     </div>
                     
                 ))}

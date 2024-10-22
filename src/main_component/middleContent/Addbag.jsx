@@ -1,30 +1,32 @@
 import React, { useEffect } from 'react';
-import { useWishlist } from '../../WishlistContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 import { useAddbag } from '../../AddbagContext';
+import { useWishlist } from '../../WishlistContext';
 
-function Wishlist() {
-    const { wishlist, setWishlist } = useWishlist();
-    const { Addbag , setAddbag} = useAddbag();
-    
+function Addbag() {
+    const { Addbag, setAddbag } = useAddbag();
+    const { wishlist, setWishlist} = useWishlist();
+
     const heartClick = (item) => {
-        const updatedWishlist = wishlist.filter(likedItem => likedItem.Description !== item.Description);
-        setWishlist(updatedWishlist); // Update the wishlist state
-        console.log('Item removed:', item);
+        const isLiked = wishlist.some(likedItem => likedItem.Description === item.Description);
+        if (isLiked) {
+            setWishlist(wishlist.filter(likedItem => likedItem.Description !== item.Description));
+        } else {
+            setWishlist([...wishlist, item]);
+        }
     };
 
     const bagClick = (item) => {
-        const isLiked = Addbag.some(likedItem => likedItem.Description === item.Description);
-        if (!isLiked) {
-            setAddbag([...Addbag, item]);
-        }
+        const updatedAddbag = Addbag.filter(likedItem => likedItem.Description !== item.Description);
+        setAddbag(updatedAddbag); // Update the wishlist state
+        console.log('Item removed:', item);
     };
 
     return ( <>
     <div className="d-flex p-3 flex-wrap justify-content-evenly">
-                {wishlist.map((item) => (
+                {Addbag.map((item) => (
                     <div className="m-2 p-3 border rounded-4 shadow" style={{ marginBottom: '20px', width: '300px' }} key={item.Description}>
                         <img className="rounded m-3" src={item.Image} alt={item.Description} style={{ width: '250px' ,height:'350px', objectFit:'contain'}} />
                         
@@ -44,12 +46,12 @@ function Wishlist() {
                         
                         <div className="d-flex p-3 border-top border-dark pb-3 flex-wrap justify-content-evenly">
                         <FontAwesomeIcon
-                            icon={faHeartSolid} 
+                            icon={wishlist.some(wishItem => wishItem.Description === item.Description) ? faHeartSolid : faHeartRegular} 
                             onClick={() => heartClick(item)} 
-                            style={{ cursor: 'pointer', height:'1.8rem' }} 
+                            style={{ cursor: 'pointer' ,height:'1.8rem'}} 
                         />
                         
-                        <button type="button" class="btn btn-dark rounded-3" onClick={() => bagClick(item)}>Add to Bag</button>
+                        <button type="button" class="btn btn-dark rounded-3 " onClick={() => bagClick(item)}>Remove to Bag</button>
                         </div>
                     </div>
                     
@@ -58,4 +60,4 @@ function Wishlist() {
     </> );
 }
 
-export default Wishlist;
+export default Addbag;
