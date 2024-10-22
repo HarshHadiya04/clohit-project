@@ -1,4 +1,13 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
+import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
+import { useWishlist } from '../../WishlistContext'; // Adjust the path
+
 function Collection() {
+    const { wishlist, setWishlist } = useWishlist(); // Destructure the wishlist context
+
+    
     const collections = [
         {
             Image: '../../src/images/girl_2.jpg',
@@ -143,11 +152,20 @@ function Collection() {
             Price: '329'
         },
     ];
+
+    const heartClick = (item) => {
+        const isLiked = wishlist.some(likedItem => likedItem.Description === item.Description);
+        if (isLiked) {
+            setWishlist(wishlist.filter(likedItem => likedItem.Description !== item.Description));
+        } else {
+            setWishlist([...wishlist, item]);
+        }
+    };
+
     return (
-        <>
-            <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-center">
                 {collections.map((item) => (
-                    <div className="p-4 m-2" style={{ marginBottom: '20px', width: '350px', height: '500px' }}>
+                    <div className="p-4 m-2" style={{ marginBottom: '20px', width: '350px', height: '500px' }} key={item.Description}>
                         <img className="rounded" src={item.Image} alt={item.Description} style={{ width: '300px', height: '300px' }} />
                         <h4 style={{ textAlign: 'center' }}>{item.Brand}</h4>
                         <p style={{
@@ -161,10 +179,16 @@ function Collection() {
                         }}>{item.Description}</p>
                         <p>MRP: ₹{item.Mrp}</p>
                         <p>Price: ₹{item.Price}</p>
+                        
+                        <FontAwesomeIcon
+                            icon={wishlist.some(wishItem => wishItem.Description === item.Description) ? faHeartSolid : faHeartRegular} 
+                            onClick={() => heartClick(item)} 
+                            style={{ cursor: 'pointer' }} 
+                        />
                     </div>
+                    
                 ))}
             </div>
-        </>
     );
 }
 

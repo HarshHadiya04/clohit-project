@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Importing FontAwesome icons
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; 
 
 function Slideshow() {
   const [imageIndex, setImageIndex] = useState(0);
 
-  // Array of images
   const images = [
     '../../src/images/slide_1.png',
     '../../src/images/slide_2.png',
@@ -13,21 +12,18 @@ function Slideshow() {
     '../../src/images/slide_5.png'
   ];
 
-  // Automatically cycle through the images every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    }, 3000); // Change the image every 3 seconds
+    }, 5000); 
 
-    return () => clearInterval(interval); // Cleanup the interval on component unmount
+    return () => clearInterval(interval); 
   }, [images.length]);
 
-  // Go to the next image
   const goToNextImage = () => {
     setImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
-  // Go to the previous image
   const goToPreviousImage = () => {
     setImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };

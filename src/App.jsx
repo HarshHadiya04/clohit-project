@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Navbar from './main_component/navbar'
+
 import MiddleContent from './main_component/MiddleContent'
 import Footer from './main_component/Footer'
 import Home from './main_component/middleContent/Home'
 import Collection from './main_component/middleContent/Collection'
+import Navbar from './main_component/Navbar'
+import Wishlist from './main_component/middleContent/Wishlist'
 
 
 function App() {
@@ -14,6 +13,7 @@ function App() {
     <>
       <div >
         <Navbar/>
+        <Wishlist/>
         <Collection/>
         <Footer/>
       </div>

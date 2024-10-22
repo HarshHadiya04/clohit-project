@@ -38,7 +38,6 @@ const Navbar = () => {
           <div className="mx-2">Collection</div>
           <div className="mx-2">Trends</div>
           <div className="mx-2">Wishlist</div>
-          <div className="mx-2">Looks</div>
           <div className="mx-2">Bag</div>
           <div className="mx-2">User</div>
         </div>
