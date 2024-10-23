@@ -13,6 +13,7 @@ function Home() {
   const [activeGender, setActiveGender] = useState('male');
   return (
     <>
+    <br/>
       <div className="d-flex justify-content-evenly p-2" style={style}>
         {/* Male button */}
         <div
