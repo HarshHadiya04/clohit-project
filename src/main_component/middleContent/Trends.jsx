@@ -10,28 +10,28 @@ function Trends() {
     const { Addbag, setAddbag } = useAddbag();
     const boys = [
         {
-            Image: '../../src/images/Trends/boy_1.jpg',
+            Image: 'media/images/Trends/boy_1.jpg',
             Brand: 'BONKERS CORNER',
             Description: "Little Snitch Black Joggers",
             Mrp: '1299',
             Price: '1199'
         },
         {
-            Image: '../../src/images/Trends/boy_2.jpg',
+            Image: 'media/images/Trends/boy_2.jpg',
             Brand: 'CAMPUS SUTRA',
             Description: "Contrast Heathered Activewear T-Shirt",
             Mrp: '1399',
             Price: '699'
         },
         {
-            Image: '../../src/images/Trends/boy_3.jpg',
+            Image: 'media/images/Trends/boy_3.jpg',
             Brand: 'BALLER ATHLETIK',
             Description: "Hi Top Wayne Tracks",
             Mrp: '1999',
             Price: '1849'
         },
         {
-            Image: '../../src/images/Trends/boy_4.jpg',
+            Image: 'media/images/Trends/boy_4.jpg',
             Brand: 'BALLER ATHLETIK',
             Description: "Boost tea",
             Mrp: '1499',
@@ -41,28 +41,28 @@ function Trends() {
 
     const girls = [
         {
-            Image: '../../src/images/girl_9.jpg',
+            Image: 'media/images/girl_9.jpg',
             Brand: 'SIRIL',
             Description: "SIRIL Women's Bandhani Printed Chiffon Saree with Blouse",
             Mrp: '2150',
             Price: '473'
         },
         {
-            Image: '../../src/images/girl_10.jpg',
+            Image: 'media/images/girl_10.jpg',
             Brand: 'ANNI DESIGNER',
             Description: "ANNI DESIGNER Women's Cotton Blend Kurta with Palazzo",
             Mrp: '2599',
             Price: '439'
         },
         {
-            Image: '../../src/images/girl_1.jpg',
+            Image: 'media/images/girl_1.jpg',
             Brand: 'GoSriKi',
             Description: "GoSriKi Women's Rayon Blend Anarkali Printed Kurta with Palazzo & Dupatta",
             Mrp: '2599',
             Price: '689'
         },
         {
-            Image: '../../src/images/girl_3.jpg',
+            Image: 'media/images/girl_3.jpg',
             Brand: 'Amazon Brand - Myx',
             Description: "Amazon Brand - Myx Women's Printed Straight Cotton Short Kurti",
             Mrp: '799',
@@ -88,7 +88,7 @@ function Trends() {
 
     return (<>
         <div className='d-flex m-2'>
-            <img className="rounded p-2" src="../../src/images/Trends/boy.png" style={{ objectFit: 'contain' }} />
+            <img className="rounded p-2" src="media/images/Trends/boy.png" style={{ objectFit: 'contain' }} />
             <div className="d-flex p-3 justify-content-evenly overflow-auto" >
                 {boys.map((item) => (
                     <div className="m-2 p-3 border rounded-4 shadow" style={{ marginBottom: '20px', width: '300px' }} key={item.Description}>
@@ -123,7 +123,7 @@ function Trends() {
             </div>
         </div>
         <div className='d-flex m-2'>
-            <img className="rounded p-2" src="../../src/images/Trends/girl.png" style={{ objectFit: 'contain' }} />
+            <img className="rounded p-2" src="media/images/Trends/girl.png" style={{ objectFit: 'contain' }} />
             <div className="d-flex p-3 justify-content-evenly overflow-auto" >
                 {girls.map((item) => (
                     <div className="m-2 p-3 border rounded-4 shadow" style={{ marginBottom: '20px', width: '300px' }} key={item.Description}>

@@ -5,11 +5,11 @@ function Slideshow() {
   const [imageIndex, setImageIndex] = useState(0);
 
   const images = [
-    '../../src/images/slide_1.png',
-    '../../src/images/slide_2.png',
-    '../../src/images/slide_3.png',
-    '../../src/images/slide_4.png',
-    '../../src/images/slide_5.png'
+    'media/images/slide_1.png',
+    'media/images/slide_2.png',
+    'media/images/slide_3.png',
+    'media/images/slide_4.png',
+    'media/images/slide_5.png'
   ];
 
   useEffect(() => {

@@ -11,75 +11,75 @@ function Female() {
     
     const women = [
         {
-            Image: '../../src/images/girl_4.jpg',
+            Image: 'media/images/girl_4.jpg',
             Brand: 'Leriya Fashion',
             Description: "Leriya Fashion Oversized Shirt for Women | Shirt for Women Stylish Western | Women Long Shirt",
             Mrp: '1999',
             Price: '419'
         },
         {
-            Image: '../../src/images/girl_5.jpg',
+            Image: 'media/images/girl_5.jpg',
             Brand: 'DIGITAL SHOPEE',
             Description: "DIGITAL SHOPEE Women's & Girls' Solid Side Split Hem Flare Leg Bell Bottom Pants Trouser",
             Mrp: '999',
             Price: '345'
         },
         {
-            Image: '../../src/images/girl_6.jpg',
+            Image: 'media/images/girl_6.jpg',
             Brand: 'Leriya Fashion',
             Description: "Leriya Fashion Women Dress | One Piece Dress for Women | Dresses for Women | Trendi Dress for Women | Dress",
             Mrp: '1999',
             Price: '418'
         },
         {
-            Image: '../../src/images/girl_7.jpg',
+            Image: 'media/images/girl_7.jpg',
             Brand: 'SPARX',
             Description: "Sparx Womens Sx0167l Running Shoe",
             Mrp: '820',
             Price: '1099'
         },
         {
-            Image: '../../src/images/girl_8.jpg',
+            Image: 'media/images/girl_8.jpg',
             Brand: 'Campus',
             Description: "Campus Women's Claire Running Shoes",
             Mrp: '1399',
             Price: '840'
         },
         {
-            Image: '../../src/images/girl_9.jpg',
+            Image: 'media/images/girl_9.jpg',
             Brand: 'SIRIL',
             Description: "SIRIL Women's Bandhani Printed Chiffon Saree with Blouse",
             Mrp: '2150',
             Price: '473'
         },
         {
-            Image: '../../src/images/girl_10.jpg',
+            Image: 'media/images/girl_10.jpg',
             Brand: 'ANNI DESIGNER',
             Description: "ANNI DESIGNER Women's Cotton Blend Kurta with Palazzo",
             Mrp: '2599',
             Price: '439'
         },
         {
-            Image: '../../src/images/girl_1.jpg',
+            Image: 'media/images/girl_1.jpg',
             Brand: 'GoSriKi',
             Description: "GoSriKi Women's Rayon Blend Anarkali Printed Kurta with Palazzo & Dupatta",
             Mrp: '2599',
             Price: '689'
         },
         {
-            Image: '../../src/images/girl_2.jpg',
+            Image: 'media/images/girl_2.jpg',
             Brand: 'KOTTY',
             Description: "KOTTY Women's Solid Relaxed Fit Full Sleeve Co-ord Blazer and Trouser Set.",
             Mrp: '3999',
             Price: '479'
         },
         {
-            Image: '../../src/images/girl_3.jpg',
+            Image: 'media/images/girl_3.jpg',
             Brand: 'Amazon Brand - Myx',
             Description: "Amazon Brand - Myx Women's Printed Straight Cotton Short Kurti",
             Mrp: '799',
             Price: '329'
-        },
+        }, 
     ];
     const heartClick = (item) => {
         const isLiked = wishlist.some(likedItem => likedItem.Description === item.Description);
